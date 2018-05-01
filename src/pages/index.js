@@ -13,7 +13,9 @@ class BlogIndex extends React.Component {
 
     return (
       <Main>
-        <Helmet title={siteTitle} />
+        <Helmet title={siteTitle}>
+          <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
+        </Helmet>
         <Bio />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
