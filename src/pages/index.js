@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
+import { Article, Main } from '../components/Layout'
 
 class BlogIndex extends React.Component {
   render() {
@@ -11,13 +12,13 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
-      <div>
+      <Main>
         <Helmet title={siteTitle} />
         <Bio />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <Article key={node.fields.slug}>
               <h3>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
@@ -25,10 +26,10 @@ class BlogIndex extends React.Component {
               </h3>
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
+            </Article>
           )
         })}
-      </div>
+      </Main>
     )
   }
 }

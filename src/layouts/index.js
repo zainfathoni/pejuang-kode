@@ -1,40 +1,37 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+
+import Layout, { Header } from '../components/Layout'
+
+function Heading({ pathname, children }) {
+  if (pathname === '/') {
+    return <h1>{children}</h1>
+  } else {
+    return <h3>{children}</h3>
+  }
+}
 
 class Template extends React.Component {
   render() {
     const { location, children } = this.props
-    let header
-    if (location.pathname === '/') {
-      header = (
-        <h1>
-          <Link to={'/'} >
-            Gatsby Starter Blog
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3>
-          <Link to={'/'}>
-            Gatsby Starter Blog
-          </Link>
-        </h3>
-      )
-    }
     return (
-      <div>
-        {header}
+      <Layout>
+        <Header>
+          <Heading pathname={location.pathname}>
+            <Link to={'/'}>Pejuang Kode</Link>
+          </Heading>
+        </Header>
         {children()}
-      </div>
+      </Layout>
     )
   }
 }
 
 Template.propTypes = {
-  children: React.PropTypes.func,
-  location: React.PropTypes.object,
-  route: React.PropTypes.object,
+  children: PropTypes.func,
+  location: PropTypes.object,
+  route: PropTypes.object,
 }
 
 export default Template
