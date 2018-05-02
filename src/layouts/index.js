@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faCode from '@fortawesome/fontawesome-free-solid/faCode'
+import faCode from '@fortawesome/fontawesome-pro-regular/faCode'
 
 import Layout, { Header, Main, Footer } from '../components/Layout'
 

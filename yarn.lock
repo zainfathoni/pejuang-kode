@@ -6,9 +6,27 @@
   version "0.1.5"
   resolved "https://npm.fontawesome.com/29771348-10DE-43C4-BCC1-7244716E3330/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.1.5.tgz#d44485071f94ffac7f66ff6117b290eb7c908d58"
 
-"@fortawesome/fontawesome-free-solid@^5.0.11":
+"@fortawesome/fontawesome-free-brands@^5.0.11":
   version "5.0.11"
-  resolved "https://npm.fontawesome.com/29771348-10DE-43C4-BCC1-7244716E3330/@fortawesome/fontawesome-free-solid/-/fontawesome-free-solid-5.0.11.tgz#e6959def67f073b32c6ff419da0c99795f130248"
+  resolved "https://npm.fontawesome.com/29771348-10DE-43C4-BCC1-7244716E3330/@fortawesome/fontawesome-free-brands/-/fontawesome-free-brands-5.0.11.tgz#1e2eda34f2c6208facabe44a90a49972b37307e9"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.5"
+
+"@fortawesome/fontawesome-pro-light@^5.0.11":
+  version "5.0.11"
+  resolved "https://npm.fontawesome.com/29771348-10DE-43C4-BCC1-7244716E3330/@fortawesome/fontawesome-pro-light/-/fontawesome-pro-light-5.0.11.tgz#c898b3cdc199f9d1244b9a6c2eac48efaa8e8baa"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.5"
+
+"@fortawesome/fontawesome-pro-regular@^5.0.11":
+  version "5.0.11"
+  resolved "https://npm.fontawesome.com/29771348-10DE-43C4-BCC1-7244716E3330/@fortawesome/fontawesome-pro-regular/-/fontawesome-pro-regular-5.0.11.tgz#ebb1ed1c61d74b33acb3e06993b7333658cd731e"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.5"
+
+"@fortawesome/fontawesome-pro-solid@^5.0.11":
+  version "5.0.11"
+  resolved "https://npm.fontawesome.com/29771348-10DE-43C4-BCC1-7244716E3330/@fortawesome/fontawesome-pro-solid/-/fontawesome-pro-solid-5.0.11.tgz#672579eacc44458191934d3051cabf1eca9f6bac"
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.1.5"
 
