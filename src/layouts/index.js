@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faCode from '@fortawesome/fontawesome-free-solid/faCode'
 
 import Layout, { Header, Main, Footer } from '../components/Layout'
 
@@ -19,7 +21,9 @@ class Template extends React.Component {
       <Layout>
         <Header>
           <Heading pathname={location.pathname}>
-            <Link to={'/'}>Pejuang Kode</Link>
+            <Link to={'/'}>
+              <FontAwesomeIcon icon={faCode} /> Pejuang Kode
+            </Link>
           </Heading>
         </Header>
         <Main>{children()}</Main>
