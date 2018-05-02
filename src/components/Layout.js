@@ -53,6 +53,7 @@ export const Footer = styled.footer`
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 `
 
 export default Layout

@@ -15,6 +15,7 @@ class BlogIndex extends React.Component {
       <React.Fragment>
         <Helmet title={siteTitle}>
           <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
+          <meta name="theme-color" content="#0ab44d" />
         </Helmet>
         <Bio />
         {posts.map(({ node }) => {

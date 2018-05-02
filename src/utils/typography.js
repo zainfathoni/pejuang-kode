@@ -1,7 +1,7 @@
 import Typography from 'typography'
 
 const typography = new Typography({
-  baseFontSize: '21px',
+  baseFontSize: '18px',
   googleFonts: [
     {
       name: 'Titillium Web',
