@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
-import Layout, { Header } from '../components/Layout'
+import Layout, { Header, Main, Footer } from '../components/Layout'
 
 function Heading({ pathname, children }) {
   if (pathname === '/') {
@@ -22,7 +22,10 @@ class Template extends React.Component {
             <Link to={'/'}>Pejuang Kode</Link>
           </Heading>
         </Header>
-        {children()}
+        <Main>{children()}</Main>
+        <Footer>
+          <div>&copy; 2018</div>
+        </Footer>
       </Layout>
     )
   }
