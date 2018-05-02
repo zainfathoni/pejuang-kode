@@ -4,7 +4,6 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 
 import Bio from '../components/Bio'
-import { Main } from '../components/Layout'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -13,7 +12,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pathContext
 
     return (
-      <Main>
+      <React.Fragment>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
         <h1>{post.frontmatter.title}</h1>
         <p>{post.frontmatter.date}</p>
@@ -38,7 +37,7 @@ class BlogPostTemplate extends React.Component {
             </li>
           )}
         </ul>
-      </Main>
+      </React.Fragment>
     )
   }
 }
