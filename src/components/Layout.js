@@ -6,6 +6,12 @@ export const Main = styled.main`
   max-width: 740px;
   padding: 0 20px;
   margin: 0 auto;
+  a {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(130deg, #0ab44d 0%, #09b3af 100%);
+  }
 `
 
 export const Header = styled.header`
