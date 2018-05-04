@@ -5,7 +5,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faCode from '@fortawesome/fontawesome-pro-regular/faCode'
 import 'prismjs/themes/prism-tomorrow.css'
 
-import Layout, { Header, Main, Footer } from '../components/Layout'
+import Layout, { Header, Footer } from '../components/Layout'
 
 function Heading({ pathname, children }) {
   if (pathname === '/') {
@@ -27,7 +27,7 @@ class Template extends React.Component {
             </Link>
           </Heading>
         </Header>
-        <Main>{children()}</Main>
+        {children()}
         <Footer>
           <div>&copy; 2018</div>
         </Footer>
