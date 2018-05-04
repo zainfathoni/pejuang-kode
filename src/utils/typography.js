@@ -9,7 +9,7 @@ const typography = new Typography({
     },
     {
       name: 'Titillium Web',
-      styles: ['400'],
+      styles: ['700'],
     },
   ],
   headerFontFamily: ['Titillium Web', 'sans-serif'],
