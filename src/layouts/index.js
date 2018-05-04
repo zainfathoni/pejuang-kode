@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faCode from '@fortawesome/fontawesome-pro-regular/faCode'
+import 'prismjs/themes/prism-tomorrow.css'
 
 import Layout, { Header, Main, Footer } from '../components/Layout'
 
