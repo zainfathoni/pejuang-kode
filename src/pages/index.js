@@ -4,7 +4,7 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
-import { Article, Main } from '../components/Layout'
+import { Article } from '../components/Layout'
 
 class BlogIndex extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
-      <Main>
+      <React.Fragment>
         <Helmet title={siteTitle}>
           <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
           <meta name="theme-color" content="#0ab44d" />
@@ -32,7 +32,7 @@ class BlogIndex extends React.Component {
             </Article>
           )
         })}
-      </Main>
+      </React.Fragment>
     )
   }
 }
