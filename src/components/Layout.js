@@ -4,6 +4,7 @@ import styled from 'styled-components'
 export const Main = styled.main`
   flex: 1;
   max-width: 740px;
+  width: 100%;
   padding: 0 20px;
   margin: 0 auto;
   a {
@@ -35,7 +36,17 @@ export const Header = styled.header`
 
 export const Section = styled.section``
 
-export const Article = styled.article``
+export const Article = styled.article`
+  .gatsby-highlight {
+    margin-left: -20px;
+    margin-right: -20px;
+    overflow: auto;
+    pre[class*="language-"] {
+      padding: 20px;
+      border-radius: 10px; // TODO: modia query
+    }
+  }
+`
 
 export const Footer = styled.footer`
   background-image: linear-gradient(
