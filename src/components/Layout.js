@@ -3,6 +3,18 @@ import styled from 'styled-components'
 
 import media from '../utils/media'
 
+const gradientBox = `linear-gradient(
+  150deg,
+  rgb(10, 180, 77) 10%,
+  rgb(9, 179, 175) 70%,
+  rgb(9, 179, 175) 94%
+)`
+const gradientText = `linear-gradient(
+  130deg,
+  #0ab44d 0%,
+  #09b3af 100%
+)`
+
 export const Main = styled.main`
   flex: 1;
   max-width: 740px;
@@ -13,18 +25,13 @@ export const Main = styled.main`
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(130deg, #0ab44d 0%, #09b3af 100%);
+    background-image: ${gradientText};
   }
 `
 
 export const Header = styled.header`
   margin-bottom: 1.45rem;
-  background-image: linear-gradient(
-    150deg,
-    rgb(10, 180, 77) 10%,
-    rgb(9, 179, 175) 70%,
-    rgb(9, 179, 175) 94%
-  );
+  background-image: ${gradientBox};
   h1,
   h3 {
     max-width: 740px;
@@ -51,12 +58,7 @@ export const Article = styled.article`
 `
 
 export const Footer = styled.footer`
-  background-image: linear-gradient(
-    150deg,
-    rgb(10, 180, 77) 10%,
-    rgb(9, 179, 175) 70%,
-    rgb(9, 179, 175) 94%
-  );
+  background-image: ${gradientBox};
   div {
     max-width: 740px;
     padding: 20px;
