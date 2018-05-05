@@ -65,8 +65,8 @@ export const Article = styled.article`
         background-color: #14161a;
         display: block;
         margin: 0 -1rem;
-        padding: 0 1rem 0 0.6rem;
-        border-left: 0.4rem solid #f08d49;
+        padding: 0 1rem 0 0.7rem;
+        border-left: 0.3rem solid #f08d49;
       }
     }
   }
