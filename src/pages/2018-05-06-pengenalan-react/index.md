@@ -10,3 +10,12 @@ Sudah bukan perdebatan lagi bahwa [React](https://reactjs.org) adalah salah satu
     Berbeda dengan framework JavaScript lain pada umumnya, fitur yang disediakan oleh React hanya terbatas pada optimasi rendering HTML dengan memanfaatkan Virtual DOM, sedangkan framework lain seperti [Angular](https://angular.io/) dan [Vue](https://vuejs.org/) menyediakan fitur yang cukup lengkap, sehingga hampir semua kebutuhan dasar untuk membuat sebuah web _Single Page Application_ sudah dapat terpenuhi tanpa menggunakan tambahan _library_ lainnya.
 
 2.  Konsep-konsep di React sangat erat kaitannya dengan konsep-konsep di JavaScript.
+
+```jsx{2-3,6}
+const Styled = styled.div`
+  margin: 0 auto;
+  color: #454545;
+`
+
+const Component = props => <Styled {...props} />
+```
