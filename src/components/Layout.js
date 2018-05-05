@@ -18,6 +18,7 @@ export const Main = styled.main`
 `
 
 export const Header = styled.header`
+  margin-bottom: 1.45rem;
   background-image: linear-gradient(
     150deg,
     rgb(10, 180, 77) 10%,
