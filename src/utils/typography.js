@@ -1,15 +1,19 @@
 import Typography from 'typography'
 
 const typography = new Typography({
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   googleFonts: [
     {
-      name: 'Titillium Web',
+      name: 'Nunito',
       styles: ['400'],
+    },
+    {
+      name: 'Titillium Web',
+      styles: ['700'],
     },
   ],
   headerFontFamily: ['Titillium Web', 'sans-serif'],
-  bodyFontFamily: ['Titillium Web', 'sans-serif'],
+  bodyFontFamily: ['Nunito', 'sans-serif'],
 })
 
 export default typography

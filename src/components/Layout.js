@@ -1,14 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import media from '../utils/media'
+
 export const Main = styled.main`
   flex: 1;
   max-width: 740px;
+  width: 100%;
   padding: 0 20px;
   margin: 0 auto;
+  a {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(130deg, #0ab44d 0%, #09b3af 100%);
+  }
 `
 
 export const Header = styled.header`
+  margin-bottom: 1.45rem;
   background-image: linear-gradient(
     150deg,
     rgb(10, 180, 77) 10%,
@@ -29,7 +39,17 @@ export const Header = styled.header`
 
 export const Section = styled.section``
 
-export const Article = styled.article``
+export const Article = styled.article`
+  .gatsby-highlight {
+    margin-left: -20px;
+    margin-right: -20px;
+    overflow: auto;
+    pre[class*="language-"] {
+      padding: 20px;
+      ${media.tablet`border-radius: 10px;`}
+    }
+  }
+`
 
 export const Footer = styled.footer`
   background-image: linear-gradient(

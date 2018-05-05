@@ -52,5 +52,6 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-next`,
+    `gatsby-remark-prismjs`,
   ],
 }

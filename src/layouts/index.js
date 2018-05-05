@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faCode from '@fortawesome/fontawesome-pro-regular/faCode'
+import 'prismjs/themes/prism-tomorrow.css'
 
 import Layout, { Header, Main, Footer } from '../components/Layout'
+import Icon from '../components/Icon'
 
 function Heading({ pathname, children }) {
   if (pathname === '/') {
@@ -22,11 +23,13 @@ class Template extends React.Component {
         <Header>
           <Heading pathname={location.pathname}>
             <Link to={'/'}>
-              <FontAwesomeIcon icon={faCode} /> Pejuang Kode
+              <Icon icon={faCode} /> Pejuang Kode
             </Link>
           </Heading>
         </Header>
-        <Main>{children()}</Main>
+        <Main>
+          {children()}
+        </Main>
         <Footer>
           <div>&copy; 2018</div>
         </Footer>
