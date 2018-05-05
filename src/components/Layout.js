@@ -48,12 +48,18 @@ export const Section = styled.section``
 
 export const Article = styled.article`
   .gatsby-highlight {
+    background-color: #2d2d2d;
+    ${media.tablet`border-radius: .75em;`};
     margin: 0 -1em 1.45rem -1em;
+    padding: 1em;
     overflow: auto;
 
     pre[class*='language-'] {
-      padding: 1em;
-      ${media.tablet`border-radius: .75em;`};
+      margin: 0;
+      padding: 0;
+      overflow: initial;
+      float: left;
+      min-width: 100%;
 
       .gatsby-highlight-code-line {
         background-color: #14161a;
