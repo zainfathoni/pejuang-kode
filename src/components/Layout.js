@@ -49,9 +49,9 @@ export const Section = styled.section``
 export const Article = styled.article`
   .gatsby-highlight {
     background-color: #2d2d2d;
-    ${media.tablet`border-radius: .75em;`};
-    margin: 0 -1em 1.45rem -1em;
-    padding: 1em;
+    ${media.tablet`border-radius: .75rem;`};
+    margin: 0 -1rem 1.45rem -1rem;
+    padding: 1rem;
     overflow: auto;
 
     pre[class*='language-'] {
@@ -64,9 +64,9 @@ export const Article = styled.article`
       .gatsby-highlight-code-line {
         background-color: #14161a;
         display: block;
-        margin: 0 -1em;
-        padding: 0 1em 0 0.6em;
-        border-left: 0.4em solid #f08d49;
+        margin: 0 -1rem;
+        padding: 0 1rem 0 0.6rem;
+        border-left: 0.4rem solid #f08d49;
       }
     }
   }
