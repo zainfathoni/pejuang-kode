@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import media from '../utils/media'
+
 export const Main = styled.main`
   flex: 1;
   max-width: 740px;
@@ -43,7 +45,7 @@ export const Article = styled.article`
     overflow: auto;
     pre[class*="language-"] {
       padding: 20px;
-      border-radius: 10px; // TODO: modia query
+      ${media.tablet`border-radius: 10px;`}
     }
   }
 `
