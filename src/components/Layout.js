@@ -50,9 +50,18 @@ export const Article = styled.article`
   .gatsby-highlight {
     margin: 0 -20px 1.45rem -20px;
     overflow: auto;
+
     pre[class*='language-'] {
       padding: 20px;
       ${media.tablet`border-radius: 10px;`};
+
+      .gatsby-highlight-code-line {
+        background-color: #14161a;
+        display: block;
+        margin: 0 -20px;
+        padding: 0 20px 0 16px;
+        border-left: 4px solid #f08d49;
+      }
     }
   }
 `
