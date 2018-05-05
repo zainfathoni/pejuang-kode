@@ -9,7 +9,7 @@ Bookmarksgrove right at the coast of the Semantics, a large language
 ocean. A small river named Duden flows by their place and supplies it
 with the necessary regelialia.
 
-```jsx
+```jsx{2-3,6}
 const Styled = styled.div`
   margin: 0 auto;
   color: #454545;

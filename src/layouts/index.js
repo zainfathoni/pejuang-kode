@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 import faCode from '@fortawesome/fontawesome-pro-regular/faCode'
 import 'prismjs/themes/prism-tomorrow.css'
 
@@ -20,6 +21,10 @@ class Template extends React.Component {
     const { location, children } = this.props
     return (
       <Layout>
+        <Helmet>
+          <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+          <meta name="theme-color" content="#0ab44d" />
+        </Helmet>
         <Header>
           <Heading pathname={location.pathname}>
             <Link to={'/'}>
@@ -27,9 +32,7 @@ class Template extends React.Component {
             </Link>
           </Heading>
         </Header>
-        <Main>
-          {children()}
-        </Main>
+        <Main>{children()}</Main>
         <Footer>
           <div>&copy; 2018</div>
         </Footer>

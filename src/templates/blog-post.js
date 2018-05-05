@@ -1,10 +1,22 @@
 import React from 'react'
+import styled from 'styled-components'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 
 import Bio from '../components/Bio'
 import { Article } from '../components/Layout'
+
+const ContextNav = styled.ul`
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+`
+
+const Next = styled.li``
+const Prev = Next.extend`
+  margin-right: auto;
+`
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -14,30 +26,32 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Article>
-        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+        <Helmet>
+          <title>{`${post.frontmatter.title} | ${siteTitle}`}</title>
+        </Helmet>
         <h1>{post.frontmatter.title}</h1>
         <p>{post.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
         <Bio />
 
-        <ul>
+        <ContextNav>
           {previous && (
-            <li>
+            <Prev>
               <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
-            </li>
+            </Prev>
           )}
 
           {next && (
-            <li>
+            <Next>
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
-            </li>
+            </Next>
           )}
-        </ul>
+        </ContextNav>
       </Article>
     )
   }
