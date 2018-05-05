@@ -41,12 +41,11 @@ export const Section = styled.section``
 
 export const Article = styled.article`
   .gatsby-highlight {
-    margin-left: -20px;
-    margin-right: -20px;
+    margin: 0 -20px 1.45rem -20px;
     overflow: auto;
-    pre[class*="language-"] {
+    pre[class*='language-'] {
       padding: 20px;
-      ${media.tablet`border-radius: 10px;`}
+      ${media.tablet`border-radius: 10px;`};
     }
   }
 `
