@@ -19,7 +19,7 @@ export const Main = styled.main`
   flex: 1;
   max-width: 740px;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 1em;
   margin: 0 auto;
   a {
     -webkit-background-clip: text;
@@ -35,7 +35,7 @@ export const Header = styled.header`
   h1,
   h3 {
     max-width: 740px;
-    padding: 20px;
+    padding: 1em;
     margin: 0 auto;
     a {
       color: #fff;
@@ -48,19 +48,19 @@ export const Section = styled.section``
 
 export const Article = styled.article`
   .gatsby-highlight {
-    margin: 0 -20px 1.45rem -20px;
+    margin: 0 -1em 1.45rem -1em;
     overflow: auto;
 
     pre[class*='language-'] {
-      padding: 20px;
-      ${media.tablet`border-radius: 10px;`};
+      padding: 1em;
+      ${media.tablet`border-radius: .75em;`};
 
       .gatsby-highlight-code-line {
         background-color: #14161a;
         display: block;
-        margin: 0 -20px;
-        padding: 0 20px 0 16px;
-        border-left: 4px solid #f08d49;
+        margin: 0 -1em;
+        padding: 0 1em 0 0.6em;
+        border-left: 0.4em solid #f08d49;
       }
     }
   }
@@ -70,7 +70,7 @@ export const Footer = styled.footer`
   background-image: ${gradientBox};
   div {
     max-width: 740px;
-    padding: 20px;
+    padding: 1em;
     margin: 0 auto;
     text-align: center;
     a {

@@ -5,7 +5,7 @@ import Gravatar from 'react-gravatar'
 import { Section } from './Layout'
 
 const StyledSection = Section.extend`
-  margin: 20px 0;
+  margin: 1em 0;
   display: flex;
   align-items: center;
 `
