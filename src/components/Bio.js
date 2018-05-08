@@ -41,9 +41,9 @@ export const Zain = () => (
 export const Galih = () => (
   <Bio email="hi@galihpratama.net">
     <strong>Galih Pratama</strong> adalah pembuat website tutorial{' '}
-    <a href="https://belajarkoding.net">belajarkoding.net</a>.<br />Ia juga
-    memiliki blog pribadi di{' '}
-    <a href="https://galihpratama.net/">galihpratama.net</a>
+    <a href="https://belajarkoding.net">belajarkoding.net</a>.<br />Simak pula
+    blog pribadinya di{' '}
+    <a href="https://galihpratama.net/">galihpratama.net</a>.
     <br />
     Anda dapat menghubunginya melalui{' '}
     <a href="mailto:hi@galihpratama.net">email</a>.
