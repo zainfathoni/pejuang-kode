@@ -14,10 +14,6 @@ class BlogIndex extends React.Component {
     return (
       <React.Fragment>
         <Helmet title={siteTitle} />
-        <h2>Penulis</h2>
-        <Zain />
-        <Galih />
-        <hr />
         <h2>Artikel</h2>
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -33,6 +29,10 @@ class BlogIndex extends React.Component {
             </Article>
           )
         })}
+        <hr />
+        <h4>Kontributor</h4>
+        <Zain />
+        <Galih />
       </React.Fragment>
     )
   }

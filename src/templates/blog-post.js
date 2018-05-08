@@ -37,6 +37,7 @@ class BlogPostTemplate extends React.Component {
         <p>{post.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
+        <h4>Kontributor</h4>
         {authorBio[post.frontmatter.author]}
 
         <ContextNav>
