@@ -20,6 +20,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   }
                   frontmatter {
                     title
+                    author
                   }
                 }
               }

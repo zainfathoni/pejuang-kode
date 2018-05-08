@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-import Bio from '../components/Bio'
+import { Zain, Galih } from '../components/Bio'
 import { Article } from '../components/Layout'
 
 class BlogIndex extends React.Component {
@@ -14,7 +14,11 @@ class BlogIndex extends React.Component {
     return (
       <React.Fragment>
         <Helmet title={siteTitle} />
-        <Bio />
+        <h2>Penulis</h2>
+        <Zain />
+        <Galih />
+        <hr />
+        <h2>Artikel</h2>
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (

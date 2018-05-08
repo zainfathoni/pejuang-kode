@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 
-import Bio from '../components/Bio'
+import { Zain } from '../components/Bio'
 import { Article } from '../components/Layout'
 
 const ContextNav = styled.ul`
@@ -33,7 +33,7 @@ class BlogPostTemplate extends React.Component {
         <p>{post.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
-        <Bio />
+        <Zain />
 
         <ContextNav>
           {previous && (

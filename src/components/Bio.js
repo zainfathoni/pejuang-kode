@@ -19,16 +19,30 @@ const Details = styled.div`
   margin-left: 15px;
 `
 
-const Bio = props => (
+const Bio = ({ email, children }) => (
   <StyledSection>
-    <Avatar size={100} email="zain.fathoni@gmail.com" />
-    <Details>
-      Written by <strong>Zain Fathoni</strong>, a father, husband, and software
-      engineering enthusiast who lives and works in Singapore.
-      <br />You could reach him on&nbsp;
-      <a href="https://t.me/zainfathoni">Telegram</a>.
-    </Details>
+    <Avatar size={100} email={email} />
+    <Details>{children}</Details>
   </StyledSection>
 )
 
 export default Bio
+
+export const Zain = () => (
+  <Bio email="zain.fathoni@gmail.com">
+    <strong>Zain Fathoni</strong> adalah seorang Senior Software Engineer di{' '}
+    <a href="https://www.ninjavan.co">Ninja Van</a> yang tertarik dengan
+    JavaScript dan React beserta ekosistemnya.
+    <br />Anda dapat menghubunginya melalui{' '}
+    <a href="https://t.me/zainfathoni">Telegram</a>.
+  </Bio>
+)
+
+export const Galih = () => (
+  <Bio email="hi@galihpratama.net">
+    <strong>Galih Pratama</strong> adalah pembuat website tutorial{' '}
+    <a href="https://belajarkoding.net">belajarkoding.net</a>.
+    <br />Anda dapat menghubunginya melalui{' '}
+    <a href="mailto:hi@galihpratama.net">email</a>.
+  </Bio>
+)
