@@ -18,6 +18,10 @@ Oleh karena itulah, saya tergerak untuk menulis artikel berseri tentang React da
 
 Saya akan mencoba menyajikan keduanya dengan cara memperkenalkan fitur React satu persatu sekaligus mengaitkannya dengan konsep JavaScript di artikel terpisah. Jadi setiap kali rilis, saya akan merilis dua tulisan sekaligus, satu untuk React dan satu untuk JavaScript. Apabila Anda ingin memberi saran kepada saya mengenai hal ini, silakan hubungi saya melalui [Facebook Messenger](https://m.me/zain.fathoni.page).
 
+## Persiapan
+
+Cara termudah untuk mulai menggunakan React adalah
+
 ```jsx{2-3,6}
 const Styled = styled.div`
   margin: 0 auto;
