@@ -31,9 +31,9 @@ export default Bio
 export const Zain = () => (
   <Bio email="zain.fathoni@gmail.com">
     <strong>Zain Fathoni</strong> adalah seorang Senior Software Engineer di{' '}
-    <a href="https://www.ninjavan.co">Ninja Van</a> yang tertarik dengan
-    JavaScript dan React beserta ekosistemnya.
-    <br />Anda dapat menghubunginya melalui{' '}
+    <a href="https://www.ninjavan.co">Ninja Van</a> Singapura. Kini ia sangat
+    tertarik dengan JavaScript dan React beserta ekosistemnya.<br />
+    Anda dapat menghubunginya melalui{' '}
     <a href="https://t.me/zainfathoni">Telegram</a>.
   </Bio>
 )
@@ -41,8 +41,11 @@ export const Zain = () => (
 export const Galih = () => (
   <Bio email="hi@galihpratama.net">
     <strong>Galih Pratama</strong> adalah pembuat website tutorial{' '}
-    <a href="https://belajarkoding.net">belajarkoding.net</a>.
-    <br />Anda dapat menghubunginya melalui{' '}
+    <a href="https://belajarkoding.net">belajarkoding.net</a>.<br />Ia juga
+    memiliki blog pribadi di{' '}
+    <a href="https://galihpratama.net/">galihpratama.net</a>
+    <br />
+    Anda dapat menghubunginya melalui{' '}
     <a href="mailto:hi@galihpratama.net">email</a>.
   </Bio>
 )

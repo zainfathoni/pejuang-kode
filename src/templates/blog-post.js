@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 
-import { Zain } from '../components/Bio'
+import { Zain, Galih } from '../components/Bio'
 import { Article } from '../components/Layout'
 
 const ContextNav = styled.ul`
@@ -12,11 +12,15 @@ const ContextNav = styled.ul`
   display: flex;
   justify-content: flex-end;
 `
-
 const Next = styled.li``
 const Prev = Next.extend`
   margin-right: auto;
 `
+
+const authorBio = {
+  zain: <Zain />,
+  galih: <Galih />,
+}
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -33,7 +37,7 @@ class BlogPostTemplate extends React.Component {
         <p>{post.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
-        <Zain />
+        {authorBio[post.frontmatter.author]}
 
         <ContextNav>
           {previous && (
@@ -64,7 +68,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
+        owner
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -73,6 +77,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        author
       }
     }
   }

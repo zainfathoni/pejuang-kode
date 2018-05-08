@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Pejuang Kode`,
-    author: `Zain Fathoni`,
+    owner: `Zain Fathoni`,
   },
   plugins: [
     {
