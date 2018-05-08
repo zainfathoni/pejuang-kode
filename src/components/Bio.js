@@ -34,7 +34,7 @@ export const Zain = () => (
     <a href="https://www.ninjavan.co">Ninja Van</a> Singapura. Kini ia sangat
     tertarik dengan JavaScript dan React beserta ekosistemnya.<br />
     Anda dapat menghubunginya melalui{' '}
-    <a href="https://t.me/zainfathoni">Telegram</a>.
+    <a href="https://m.me/zain.fathoni.page">Facebook Messenger</a>.
   </Bio>
 )
 
@@ -42,8 +42,7 @@ export const Galih = () => (
   <Bio email="hi@galihpratama.net">
     <strong>Galih Pratama</strong> adalah pembuat website tutorial{' '}
     <a href="https://belajarkoding.net">belajarkoding.net</a>.<br />Simak pula
-    blog pribadinya di{' '}
-    <a href="https://galihpratama.net/">galihpratama.net</a>.
+    blog pribadinya di <a href="https://galihpratama.net/">galihpratama.net</a>.
     <br />
     Anda dapat menghubunginya melalui{' '}
     <a href="mailto:hi@galihpratama.net">email</a>.
