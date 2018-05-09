@@ -42,7 +42,7 @@ export const Galih = () => (
   <Bio email="hi@galihpratama.net">
     <strong>Galih Pratama</strong> adalah pemilik dari{' '}
     <a href = "https://belajarkoding.net"> BelajarKoding </a> dan 
-    Head Front-end di <a href="https://crowde.co">CROWDE</a> .
+    Head Front-end di <a href="https://crowde.co">CROWDE</a>.
     Sudah membuat lebih dari 30+ aplikasi dan 100+ video tutorial.
     <br />
     Anda dapat menghubunginya melalui{' '}
