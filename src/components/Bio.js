@@ -19,20 +19,33 @@ const Details = styled.div`
   margin-left: 15px;
 `
 
-class Bio extends React.Component {
-  render() {
-    return (
-      <StyledSection>
-        <Avatar size={100} email="zain.fathoni@gmail.com" />
-        <Details>
-          Written by <strong>Zain Fathoni</strong>, a father, husband, and
-          software engineering enthusiast who lives and works in Singapore.
-          <br />You could reach him on&nbsp;
-          <a href="https://t.me/zainfathoni">Telegram</a>.
-        </Details>
-      </StyledSection>
-    )
-  }
-}
+const Bio = ({ email, children }) => (
+  <StyledSection>
+    <Avatar size={100} email={email} />
+    <Details>{children}</Details>
+  </StyledSection>
+)
 
 export default Bio
+
+export const Zain = () => (
+  <Bio email="zain.fathoni@gmail.com">
+    <strong>Zain Fathoni</strong> adalah seorang Senior Software Engineer di{' '}
+    <a href="https://www.ninjavan.co">Ninja Van</a> Singapura. Kini ia sangat
+    tertarik dengan JavaScript dan React beserta ekosistemnya.<br />
+    Anda dapat menghubunginya melalui{' '}
+    <a href="https://m.me/zain.fathoni.page">Facebook Messenger</a>.
+  </Bio>
+)
+
+export const Galih = () => (
+  <Bio email="hi@galihpratama.net">
+    <strong>Galih Pratama</strong> adalah pemilik dari{' '}
+    <a href = "https://belajarkoding.net"> BelajarKoding </a> dan 
+    Head Front-end di <a href="https://crowde.co">CROWDE</a>.
+    Sudah membuat lebih dari 30+ aplikasi dan 100+ video tutorial.
+    <br />
+    Anda dapat menghubunginya melalui{' '}
+    <a href="mailto:hi@galihpratama.net">Email</a>.
+  </Bio>
+)
