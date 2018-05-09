@@ -40,11 +40,12 @@ export const Zain = () => (
 
 export const Galih = () => (
   <Bio email="hi@galihpratama.net">
-    <strong>Galih Pratama</strong> adalah pembuat website tutorial{' '}
-    <a href="https://belajarkoding.net">belajarkoding.net</a>.<br />Simak pula
-    blog pribadinya di <a href="https://galihpratama.net/">galihpratama.net</a>.
+    <strong>Galih Pratama</strong> adalah pemilik dari{' '}
+    <a href = "https://belajarkoding.net"> BelajarKoding </a> dan 
+    Head Front-end di <a href="https://crowde.co">BelajarKoding</a> .<br />
+    Sudah membuat lebih dari 30+ aplikasi dan 100+ video tutorial.
     <br />
     Anda dapat menghubunginya melalui{' '}
-    <a href="mailto:hi@galihpratama.net">email</a>.
+    <a href="mailto:hi@galihpratama.net">Email</a>.
   </Bio>
 )
