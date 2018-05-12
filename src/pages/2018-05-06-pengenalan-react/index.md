@@ -22,17 +22,44 @@ Saya akan mencoba menyajikan keduanya dengan cara memperkenalkan fitur React sat
 
 Cara termudah untuk mulai menggunakan React adalah menggunakan [CodePen](https://codepen.io/) atau [CodeSandbox](https://codesandbox.io). Dengannya, kita tidak perlu meng-install apapun di komputer kita. Cukup dengan membuka website tersebut dan membuat project baru di sana. Sebagai alat peraga untuk penjelasan saya di tulisan ini, kita akan menggunakan sebuah project di CodeSandbox berikut ini:
 
-<iframe src="https://codesandbox.io/embed/github/zainfathoni/belajar-react/tree/persiapan/?autoresize=1&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<iframe src="https://codesandbox.io/embed/github/zainfathoni/belajar-react/tree/1-0-persiapan/?autoresize=1&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 > Apabila Anda ingin menjalankannya di komputer Anda secara lokal, tinggal _download_ saja project tersebut, pastikan [NodeJS](https://nodejs.org/en/) sudah terinstall dengan menjalankan perintah `bash…node -v`, lalu jalankan perintah `bash…npm install && npm start` untuk menyalakan aplikasi.
 
-Di project tersebut ada tiga buah file, yaitu `index.js`, `index.html`, dan `package.json`.
+Di project tersebut terdapat tiga buah file, yaitu file JavaScript `index.js`, HTML `index.html`, dan JSON `package.json`. Mari kita amati lebih jauh.
 
-###
+### ReactDOM
+
+File `index.js` ini berisikan contoh penggunaan React yang paling sederhana. Di sini kita meng-`js…import` dua _library_, yaitu **React** & **ReactDOM**. Kegunaan ReactDOM di sini cukup jelas, yaitu me-_render_ sesuatu ke sebuah HTML element yang memiliki `html…id=root`. Coba buka file `index.html`, pada baris ke-12 akan Anda temukan `html…<div id="root"></div>`. Di situlah aplikasi React kita ini akan dipasang nantinya.
+
+```jsx{2,4,6}
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+)
+```
+
+### React
+
+Nah, yang agak aneh adalah, untuk apa kita meng-`js…import` **React**, padahal di situ tidak terlihat sama sekali penggunaan React?
+Untuk mengujinya, coba sekarang tambahkan `js…//` di depan `js…import React from 'react'` untuk menjadikannya komentar dan tidak terbaca oleh JavaScript.
+Maka yang Anda lihat adalah pesan error seperti ini:
+
+<iframe src="https://codesandbox.io/embed/github/zainfathoni/belajar-react/tree/1-1-react-import-commented/?autoresize=1&fontsize=13&view=split" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+Ternyata React dibutuhkan untuk bisa menjalankan baris ini.
 
 ```jsx{2}
 ReactDOM.render(
   <h1>Hello, world!</h1>,
   document.getElementById('root')
-);
+)
 ```
+
+Bagi yang baru paham JavaScript dan baru pertama kali ini belajar React, ada dua pertanyaan besar di sini:
+
+1. Bahasa apa ini? Mirip HTML, tapi kok ada di dalam file `js`?
+2. Kalau memang React dibutuhkan di sini, mana `React`-nya?
