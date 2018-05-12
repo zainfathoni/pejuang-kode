@@ -65,6 +65,10 @@ export const Article = styled.article`
       }
     }
   }
+
+  & :not(pre) > code[class*="language-"] {
+    padding: .1em .3em;
+    border-radius: .2em;
 `
 
 export const Footer = styled.footer`
