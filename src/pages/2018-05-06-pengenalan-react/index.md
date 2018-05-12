@@ -20,13 +20,23 @@ Saya akan mencoba menyajikan keduanya dengan cara memperkenalkan fitur React sat
 
 ## Persiapan
 
-Cara termudah untuk mulai menggunakan React adalah
+Cara termudah untuk mulai menggunakan React adalah menggunakan [CodePen](https://codepen.io/) atau [CodeSandbox](https://codesandbox.io). Dengannya, kita tidak perlu meng-install apapun di komputer kita. Cukup dengan membuka website tersebut dan membuat project baru di sana.
 
-```jsx{2-3,6}
-const Styled = styled.div`
-  margin: 0 auto;
-  color: #454545;
-`
+Sebagai alat peraga untuk penjelasan saya di tulisan ini, saya telah membuat sebuah project yang dapat Anda akses di sini: [Pengenalan React - CodeSandbox](https://codesandbox.io/s/n7mqwn6jwm). Di situ terdapat tiga buah file, dengan struktur folder sebagai berikut:
 
-const Component = props => <Styled {...props} />
+```ini{2,4,5}
+public/
+├── index.html
+src/
+├── index.js
+package.json
+```
+
+###
+
+```jsx{2}
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
 ```
