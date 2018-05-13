@@ -50,7 +50,7 @@ Maka yang Anda lihat adalah pesan error seperti ini:
 
 <iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/2-react/?autoresize=1&fontsize=13&view=split" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-Ternyata React dibutuhkan untuk bisa menjalankan baris ini.
+Ternyata React dibutuhkan untuk bisa menjalankan baris ini:
 
 ```jsx{2}
 ReactDOM.render(
@@ -61,7 +61,19 @@ ReactDOM.render(
 
 Bagi yang baru paham JavaScript dan baru pertama kali ini belajar React, ada dua pertanyaan besar di sini:
 
-1. Bahasa apa ini? Mirip HTML, tapi kok ada di dalam file `js`?
-2. Kalau memang React dibutuhkan di sini, mana `React`-nya?
+1.  Bahasa apa ini? Mirip HTML, tapi kok ada di dalam file `js`?
+2.  Kalau memang React dibutuhkan di sini, mana `React`-nya?
 
-Untuk bisa menjawab dua pertanyaan di
+Untuk bisa menjawab kedua pertanyaan di atas, kita perlu berkenalan dulu dengan yang namanya **JSX** (JavaScript XML).
+
+## 3. JSX
+
+JSX digunakan di dalam React untuk mengekspresikan (_markup_ yang mirip dengan) HTML di dalam JavaScript. React [tidak mengharuskan](https://reactjs.org/docs/react-without-jsx.html) kita menggunakan JSX, tapi kebanyakan orang merasa sangat terbantu dengannya ketika menyusun tampilan antarmuka (UI) di dalam kode JavaScript.
+Apabila kode di atas kita tulis ulang tanpa menggunakan JSX, maka jadinya akan seperti ini:
+
+```js{2}
+ReactDOM.render(
+  React.createElement('div', null, 'Hello, world!')
+  document.getElementById('root')
+)
+```
