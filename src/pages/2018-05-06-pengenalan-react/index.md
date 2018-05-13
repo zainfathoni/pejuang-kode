@@ -218,6 +218,42 @@ Kembali ke laptop. Suatu fungsi bisa dikatakan _pure function_ apabila memenuhi 
 
 Pembahasan lebih lanjut mengenai _pure functions_ akan saya jelaskan di tulisan lain ke depannya.
 
-Kalau kita sama sekali tidak boleh mengubah props, lantas bagaimana jika kita memerlukan suatu nilai yang bisa diubah untuk menentukan tampilannya? Misalnya, kita ingin komponen `jsx…<Greet />` kita dapat menerima beberapa nama sekaligus dan menampilkannya secara bergantian.
+Kalau kita sama sekali tidak boleh mengubah props, lantas bagaimana jika kita memerlukan suatu nilai yang bisa diubah untuk menentukan tampilannya? Misalnya, kita ingin komponen `jsx…<Greet />` kita dapat menerima beberapa nama sekaligus dan menampilkannya secara bergantian. Di sinilah kita mulai perlu membuat komponen yang lebih kompleks daripada _Functional Components_ di atas.
 
-### 4.4 _Class Components_ dan _State_
+### 4.4 _Class Components_
+
+Selain menggunakan [fungsi](#41-functional-components), kita juga bisa mendefinisikan komponen React dengan menggunakan `js…class` JavaScript. Mari kita coba praktikkan ke dalam komponen `jsx…<Greet />` kita.
+
+_Functional Component_:
+
+```jsx{1,4}
+function Greet(props) {
+  return (
+    <h1>
+      Hello, {props.name || 'Kisanak'}!
+    </h1>
+  )
+}
+```
+
+_Class Component_:
+
+```jsx{1,2,5}
+class Greet extends React.Component {
+  render() {
+    return (
+      <h1>
+        Hello, {this.props.name || 'Kisanak'}!
+      </h1>
+    )
+  }
+}
+```
+
+Ada tiga perubahan signifikan di sini, yaitu:
+
+1.  Fungsi `js…Greet(props)` berubah menjadi `js…class Greet` yang meng-`js…extends React.Component`.
+2.  Badan fungsi dipindah ke dalam _method_ `js…render()`.
+3.  `js…props` tidak lagi diperoleh melalui parameter fungsi, tetapi melalui objek `js…this` dari `js…class` tersebut.
+
+Selain dari ketiga hal di atas, kode lainnya masih sama persis. Lagi-lagi, kalau Anda masih tidak percaya juga, silakan coba lagi salin kode di atas dan tempelkan ke CodeSandbox sebelumnya. Hasil tampilannya juga pasti masih sama persis. 😅
