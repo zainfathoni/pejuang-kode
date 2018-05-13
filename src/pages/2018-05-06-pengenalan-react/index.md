@@ -99,6 +99,46 @@ Sebagai contoh, amati bagaimana cara saya membuat kalimat `Hello, world!` sebelu
 
 ### 3.2 JSX adalah _Expression_
 
-Selain bisa mengandung _Expression_, ternyata JSX itu sendiri merupakan _Expression_. Dengan demikian, kita bisa memperlakukannya sebagaimana JavaScript _Expression_ pada umumnya. Misalnya, menjadikannya sebagai nilai kembalian dari sebuah fungsi. Kita coba ganti JSX di atas dengan pemanggilan sebuah fungsi `js…greet(name)`. Coba kosongkan parameter di pemanggilan fungsi `js…greet()` dan amati hasilnya!
+Selain bisa mengandung _Expression_, ternyata JSX itu sendiri merupakan _Expression_. Jadi setelah di-_compile_ oleh [Babel](https://babeljs.io/), JSX akan diganti menjadi pemanggilan fungsi `js…React.createElement()` yang menghasilkan objek JavaScript.
+
+Dengan demikian, kita bisa memperlakukannya sebagaimana _Expression_ JavaScript pada umumnya. Misalnya, menjadikannya sebagai nilai kembalian dari sebuah fungsi. Kita coba ganti JSX di atas dengan pemanggilan sebuah fungsi `js…greet(name)`. Coba kosongkan parameter di pemanggilan fungsi `js…greet()` dan amati hasilnya!
 
 <iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/3-2-jsx-adalah-expression/?autoresize=1&fontsize=12&view=split" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+### 3.3 _Attributes_ & _Children_ in JSX
+
+Sebagaimana HTML biasa, JSX juga bisa menerima _attributes_ & _children_. Hanya saja, akibat keterbatasan JavaScript, ada sedikit perbedaan antara _attributes_ di JSX dan _attributes_ di HTML, antara lain sebagai berikut:
+
+1.  Apabila di HTML, nama _attributes_ berbentuk `kebab-case` seperti ini, di JSX nama _attributes_ berbentuk `camelCase` seperti ini.
+2.  Beberapa _attributes_ HTML seperti [class](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) & [for](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) harus diganti dengan `className` & `htmlFor` di JSX, karena `class` & `for` sudah terlanjur dijadikan sebagai [_Reserved Keywords_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords) di JavaScript.
+3.  Apabila di HTML ada beberapa _tag_ tertentu yang tidak memerlukan (bahkan tidak membolehkan) _closing tag_–seperti [<br>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br) misalnya–, di JSX semua _tag_ harus ditutup, termasuk `<br />` sekalipun
+
+Sebagai contoh, untuk menghasilkan _tag_ HTML yang seperti ini:
+
+```html
+<label for="email" class="clearfix">
+  <input id="email" tabindex="1" />
+  <br>
+  Email
+</label>
+```
+
+Kita harus menuliskan JSX seperti ini:
+
+```jsx
+<label htmlFor="email" className="clearfix">
+  <input id="email" tabIndex="1" />
+  <br />
+  Email
+</label>
+```
+
+Namun demikian, di balik "keanehan-keanehan" JSX di atas, terdapat sebuah "kekuatan besar" yang dimiliki JSX 😎, yaitu memasukkan _Expression_ JavaScript ke dalam nilai _attributes_, sebagaimana yang kita lakukan kepada _children_ di [poin sebelumnya](#31-menggunakan-expression-di-jsx). Berikut contohnya:
+
+```jsx
+<label htmlFor={id} className="clearfix">
+  <input id={id} tabIndex="1" />
+  <br />
+  Email {isInvalid(email) && 'is invalid!'}
+</label>
+```
