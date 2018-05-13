@@ -24,7 +24,7 @@ Cara termudah untuk mulai menggunakan React adalah menggunakan [CodePen](https:/
 
 <iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/0-persiapan/?autoresize=1&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-> Apabila Anda ingin menjalankannya di komputer Anda secara lokal, tinggal _download_ saja project tersebut, pastikan [NodeJS](https://nodejs.org/en/) sudah terinstall dengan menjalankan perintah `bash…node -v`, lalu jalankan perintah `bash…npm install && npm start` untuk menyalakan aplikasi.
+Project di atas bisa Anda _edit_ secara langsung sebagai sarana untuk bereksperimen. Tetapi apabila Anda ingin menjalankannya di komputer Anda secara lokal, tinggal _download_ saja project tersebut, pastikan [NodeJS](https://nodejs.org/en/) sudah terinstall dengan menjalankan perintah `bash…node -v`, lalu jalankan perintah `bash…npm install && npm start` untuk menyalakan aplikasi.
 
 Di project tersebut terdapat tiga buah file, yaitu file JavaScript `index.js`, HTML `index.html`, dan JSON `package.json`. Mari kita amati lebih jauh.
 
@@ -68,12 +68,31 @@ Untuk bisa menjawab kedua pertanyaan di atas, kita perlu berkenalan dulu dengan 
 
 ## 3. JSX
 
-JSX digunakan di dalam React untuk mengekspresikan (_markup_ yang mirip dengan) HTML di dalam JavaScript. React [tidak mengharuskan](https://reactjs.org/docs/react-without-jsx.html) kita menggunakan JSX, tapi kebanyakan orang merasa sangat terbantu dengannya ketika menyusun tampilan antarmuka (UI) di dalam kode JavaScript.
+JSX digunakan di dalam React untuk mengekspresikan (_markup_ yang mirip dengan) HTML di dalam JavaScript. React [tidak mengharuskan](https://reactjs.org/docs/react-without-jsx.html) kita menggunakan JSX, tapi kebanyakan developer merasa sangat terbantu dengannya ketika menyusun tampilan antarmuka (UI) di dalam kode JavaScript.
 Apabila kode di atas kita tulis ulang tanpa menggunakan JSX, maka jadinya akan seperti ini:
 
 ```js{2}
 ReactDOM.render(
-  React.createElement('div', null, 'Hello, world!')
+  React.createElement('h1', null, 'Hello, world!')
   document.getElementById('root')
 )
 ```
+
+Nah, di sini baru terlihat bahwa ternyata `js…React` memang dibutuhkan di baris ini. Transformasi _source code_ JavaScript semacam ini dimungkinkan berkat adanya [Babel](https://babeljs.io/). Lebih dalam tentang Babel akan saya bahas pada tulisan lainnya, bagi yang masih penasaran, dapat mencoba bermain-main dengannya [di sini](https://babeljs.io/repl/#?presets=react).
+
+Untuk bisa menggunakan JSX di React dengan baik, kita harus mampu membedakan antara **_Expression_** dan **_Statement_** di JavaScript. Saya akan menjelaskan perbedaan antara keduanya di tulisan yang akan datang, tapi sambil menunggu, sementara ini silakan coba baca dulu saja artikel [_Expressions versus statements in JavaScript_](http://2ality.com/2012/09/expressions-vs-statements.html) ini.
+
+### 3.1 Menggunakan _Expression_ di JSX
+
+Dengan JSX, kita bisa membuat HTML yang dinamis. Caranya adalah dengan memasukkan _expression_ ke dalam JSX, dan mengapitnya dengan karakter kurung kurawal `js…{}` seperti ini:
+
+```jsx{2}
+ReactDOM.render(
+  <h1>Hello, {/* Letakkan JavaScript Expression di sini */}!</h1>,
+  document.getElementById('root')
+)
+```
+
+Sebagai contoh, lihat bagaimana cara saya membuat kalimat `Hello, world!` sebelumnya menjadi bergantung pada nilai variabel lain.
+
+<iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/3-1-expression-di-jsx/?autoresize=1&fontsize=12&view=split" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
