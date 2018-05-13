@@ -12,13 +12,178 @@ Berbeda dengan framework JavaScript lain pada umumnya, fitur yang disediakan ole
 
 ### Konsep-konsep di React sangat erat kaitannya dengan konsep-konsep di JavaScript.
 
-Sudah sewajarnya bahwa konsep-konsep suatu framework pasti didasarkan pada konsep-konsep yang ada di bahasa pemrograman yang digunakan. Namun ada yang unik dengan bahasa pemrograman JavaScript. Menurut [Kyle Simpson](https://github.com/getify/You-Dont-Know-JS/blob/master/preface.md#summary), bahasa ini sangat mudah untuk dipelajari sebagian, tetapi jauh lebih sulit untuk dipahami secara utuh (atau bahkan secukupnya). Dengan dangkalnya pemahaman kita terhadap konsep-konsep di JavaScript, maka semakin sulitlah kita untuk bisa memahami konsep-konsep di React.
+Sudah sewajarnya bahwa konsep-konsep suatu framework pasti didasarkan pada konsep-konsep yang ada di bahasa pemrograman yang digunakan. Namun ada yang unik dengan bahasa pemrograman JavaScript. Menurut [Kyle Simpson](https://github.com/getify/You-Dont-Know-JS/blob/master/preface.md#summary), bahasa ini sangat mudah untuk dipelajari sebagian, tetapi jauh lebih sulit untuk dipahami secara utuh (atau bahkan seperlunya). Dengan dangkalnya pemahaman kita terhadap konsep-konsep di JavaScript, maka semakin sulitlah kita untuk bisa memahami konsep-konsep di React.
 
-```jsx{2-3,6}
-const Styled = styled.div`
-  margin: 0 auto;
-  color: #454545;
-`
+Oleh karena itulah, saya tergerak untuk menulis artikel berseri tentang React dan JavaScript. Awalnya saya ingin menulisnya satu persatu, tapi setelah melihat [hasil polling Facebook](https://www.facebook.com/zain.fathoni/posts/10213892438256376) yang saya selenggarakan tempo hari, ternyata minat "warga Facebook" untuk belajar keduanya hampir sama tingginya. Akhirnya saya putuskan untuk mencoba menulis keduanya secara paralel.
 
-const Component = props => <Styled {...props} />
+Saya akan mencoba menyajikan keduanya dengan cara memperkenalkan fitur React satu persatu sekaligus mengaitkannya dengan konsep JavaScript di artikel terpisah. Jadi setiap kali rilis, saya akan merilis dua tulisan sekaligus, satu untuk React dan satu untuk JavaScript. Apabila Anda ingin memberi saran kepada saya mengenai hal ini, silakan hubungi saya melalui [Facebook Messenger](https://m.me/zain.fathoni.page).
+
+## 0. Persiapan
+
+Cara termudah untuk mulai menggunakan React adalah menggunakan [CodePen](https://codepen.io/) atau [CodeSandbox](https://codesandbox.io). Dengannya, kita tidak perlu meng-install apapun di komputer kita. Cukup dengan membuka website tersebut dan membuat project baru di sana. Sebagai alat peraga untuk penjelasan saya di tulisan ini, kita akan menggunakan sebuah project di CodeSandbox berikut ini:
+
+<iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/0-persiapan/?autoresize=1&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+Project di atas bisa Anda _edit_ secara langsung sebagai sarana untuk bereksperimen. Tetapi apabila Anda ingin menjalankannya di komputer Anda secara lokal, tinggal _download_ saja project tersebut, pastikan [NodeJS](https://nodejs.org/en/) sudah terinstall dengan menjalankan perintah `bash…node -v`, lalu jalankan perintah `bash…npm install && npm start` untuk menyalakan aplikasi.
+
+Di project tersebut terdapat tiga buah file, yaitu file JavaScript `index.js`, HTML `index.html`, dan JSON `package.json`. Mari kita amati lebih jauh.
+
+## 1. ReactDOM
+
+File `index.js` ini berisikan contoh penggunaan React yang paling sederhana. Di sini kita meng-`js…import` dua _library_, yaitu **React** & **ReactDOM**. Kegunaan ReactDOM di sini cukup jelas, yaitu me-_render_ sesuatu ke sebuah HTML element yang memiliki `html…id=root`. Coba buka file `index.html`, pada baris ke-30 akan Anda temukan `html…<div id="root"></div>`. Di situlah aplikasi React kita ini akan dipasang nantinya.
+
+```jsx{2,4,6}
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+)
 ```
+
+## 2. React
+
+Nah, yang agak aneh adalah, untuk apa kita meng-`js…import` **React**, padahal di situ tidak terlihat sama sekali penggunaan React?
+Untuk mengujinya, coba sekarang tambahkan `js…//` di depan `js…import React from 'react'` untuk menjadikannya komentar dan tidak terbaca oleh JavaScript.
+Maka yang Anda lihat adalah pesan error seperti ini:
+
+<iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/2-react/?autoresize=1&fontsize=13&view=split" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+Ternyata React dibutuhkan untuk bisa menjalankan baris ini:
+
+```jsx{2}
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+)
+```
+
+Bagi yang baru paham JavaScript dan baru pertama kali ini belajar React, ada dua pertanyaan besar di sini:
+
+1.  Bahasa apa ini? Mirip HTML, tapi kok ada di dalam file `js`?
+2.  Kalau memang React dibutuhkan di sini, mana `React`-nya?
+
+Untuk bisa menjawab kedua pertanyaan di atas, kita perlu berkenalan dulu dengan yang namanya **JSX** (JavaScript XML).
+
+## 3. JSX
+
+JSX digunakan di dalam React untuk mengekspresikan (_markup_ yang mirip dengan) HTML di dalam JavaScript. React [tidak mengharuskan](https://reactjs.org/docs/react-without-jsx.html) kita menggunakan JSX, tapi kebanyakan developer merasa sangat terbantu dengannya ketika menyusun tampilan antarmuka (UI) di dalam kode JavaScript.
+Apabila kode di atas kita tulis ulang tanpa menggunakan JSX, maka jadinya akan seperti ini:
+
+```js{2}
+ReactDOM.render(
+  React.createElement('h1', null, 'Hello, world!')
+  document.getElementById('root')
+)
+```
+
+Nah, di sini baru terlihat bahwa ternyata `js…React` memang dibutuhkan di baris ini. Transformasi _source code_ JavaScript semacam ini dimungkinkan berkat adanya [Babel](https://babeljs.io/). Lebih dalam tentang Babel akan saya bahas pada tulisan lainnya, bagi yang masih penasaran, dapat mencoba bermain-main dengannya [di sini](https://babeljs.io/repl/#?presets=react).
+
+Untuk bisa menggunakan JSX di React dengan baik, kita harus mampu membedakan antara **_Expression_** dan **_Statement_** di JavaScript. Saya akan menjelaskan perbedaan antara keduanya di tulisan yang akan datang, tapi sambil menunggu, sementara ini silakan coba baca dulu saja artikel [_Expressions versus statements in JavaScript_](http://2ality.com/2012/09/expressions-vs-statements.html) ini.
+
+### 3.1 Menggunakan _Expression_ di JSX
+
+Dengan JSX, kita bisa membuat HTML yang dinamis. Caranya adalah dengan memasukkan _expression_ ke dalam JSX, dan mengapitnya dengan karakter kurung kurawal `js…{}` seperti ini:
+
+```jsx{2}
+ReactDOM.render(
+  <h1>Hello, {/* Letakkan JavaScript Expression di sini */}!</h1>,
+  document.getElementById('root')
+)
+```
+
+Sebagai contoh, amati bagaimana cara saya membuat kalimat `Hello, world!` sebelumnya menjadi bergantung pada nilai variabel lain. Coba ubah nilai dari variabel `firstName` dan `lastName` di sini, dan amati hasilnya!
+
+<iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/3-1-expression-di-jsx/?autoresize=1&fontsize=12&view=split" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+### 3.2 JSX adalah _Expression_
+
+Selain bisa mengandung _Expression_, ternyata JSX itu sendiri merupakan _Expression_. Jadi setelah di-_compile_ oleh [Babel](https://babeljs.io/), JSX akan diganti menjadi pemanggilan fungsi `js…React.createElement()` yang menghasilkan objek JavaScript.
+
+Dengan demikian, kita bisa memperlakukannya sebagaimana _Expression_ JavaScript pada umumnya. Misalnya, menjadikannya sebagai nilai kembalian dari sebuah fungsi. Kita coba ganti JSX di atas dengan pemanggilan sebuah fungsi `js…greet(name)`. Coba kosongkan parameter di pemanggilan fungsi `js…greet()` dan amati hasilnya!
+
+<iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/3-2-jsx-adalah-expression/?autoresize=1&fontsize=12&view=split" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+### 3.3 _Attributes_ & _Children_ in JSX
+
+Sebagaimana HTML biasa, JSX juga bisa menerima _attributes_ & _children_. Hanya saja, akibat keterbatasan JavaScript, ada sedikit perbedaan antara _attributes_ di JSX dan _attributes_ di HTML, antara lain sebagai berikut:
+
+1.  Apabila di HTML, nama _attributes_ berbentuk `kebab-case` seperti ini, di JSX nama _attributes_ berbentuk `camelCase` seperti ini.
+2.  Beberapa _attributes_ HTML seperti [class](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) & [for](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) harus diganti dengan `className` & `htmlFor` di JSX, karena `class` & `for` sudah terlanjur dijadikan sebagai [_Reserved Keywords_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords) di JavaScript.
+3.  Apabila di HTML ada beberapa _tag_ tertentu yang tidak memerlukan (bahkan tidak membolehkan) _closing tag_–seperti [<br>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br) misalnya–, di JSX semua _tag_ harus ditutup, termasuk `<br />` sekalipun
+
+Sebagai contoh, untuk menghasilkan _tag_ HTML yang seperti ini:
+
+```html
+<label for="email" class="clearfix">
+  <input id="email" tabindex="1" />
+  <br>
+  Email
+</label>
+```
+
+Kita harus menuliskan JSX seperti ini:
+
+```jsx
+<label htmlFor="email" className="clearfix">
+  <input id="email" tabIndex="1" />
+  <br />
+  Email
+</label>
+```
+
+Namun demikian, di balik "keanehan-keanehan" JSX di atas, terdapat sebuah "kekuatan besar" yang dimiliki JSX 😎, yaitu memasukkan _Expression_ JavaScript ke dalam nilai _attributes_, sebagaimana yang kita lakukan kepada _children_ di [poin sebelumnya](#31-menggunakan-expression-di-jsx). Berikut contohnya:
+
+```jsx
+<label htmlFor={id} className="clearfix">
+  <input id={id} tabIndex="1" />
+  <br />
+  Email {isInvalid(email) && 'is invalid!'}
+</label>
+```
+
+## 4. Components
+
+Di React, cara kita membagi elemen-elemen dari suatu tampilan adalah dengan memilahnya menjadi _Components_ yang terpisah. Untuk lebih jelasnya, mari kita lihat kembali _project_ terakhir kita di atas.
+
+```jsx{2,6}
+function greet(name) {
+  return <h1>Hello, {name || 'Kisanak'}!</h1>
+}
+
+ReactDOM.render(
+  greet('Pejuang'),
+  document.getElementById('root')
+)
+```
+
+Di sini, fungsi `js…greet(name)` itu menghasilkan _element_ HTML `h1`. Kita bisa saja membuat berbagai fungsi yang pada akhirnya menghasilkan sekumpulan _element_ HTML seperti fungsi di atas. Tetapi React memiliki standard tersendiri untuk memudahkan kita dalam menyusun fungsi-fungsi tersebut, yaitu dengan menjadikannya sebagai _Components_. Kita akan mulai berkenalan dengan bentuk komponen yang paling sederhana di React, yaitu **_Functional Components_**.
+
+### 4.1 _Functional Components_
+
+Sesuai dengan namanya, _Functional Components_ ini sebenarnya hanyalah fungsi JavaScript biasa. Yang menjadikannya layak untuk disebut sebagai sebuah _Component_ hanyalah 2 syarat berikut ini:
+
+1.  Hanya menerima **sebuah** parameter dengan tipe `object`
+2.  Menghasilkan _element_ HTML atau _component_ React
+
+Fungsi `js…greet(name)` kita sudah memenuhi syarat ke-2, yaitu menghasilkan _element_ HTML `h1`. Fungsi ini juga sudah memenuhi sebagian dari syarat pertama, yaitu hanya menerima **sebuah** parameter, tetapi tipenya masih `string`. Ini berarti kita bisa membuatnya menjadi _component_ cukup dengan mengubah parameternya menjadi bertipe `object`.
+
+```jsx{1-2}
+function Greet(props) {
+  return <h1>Hello, {props.name || 'Kisanak'}!</h1>
+}
+```
+
+Catatan: Kita juga mengubah nama fungsinya menjadi diawali dengan huruf kapital, ini bukan syarat wajib, tetapi sudah menjadi konvensi untuk membedakan _component_ React dengan _element_ HTML biasa.
+
+Dengan demikian, maka fungsi ini sudah layak untuk disebut sebagai sebuah _Functional Component_! Mudah bukan? 😏
+Lantas, apa keistimewaan dari _Functional Component_ ini? 🤔
+
+> Setiap _Component_ di React dapat disusun satu sama lain dengan menggunakan JSX, sebagaimana _Element_ HTML.
+
+Setelah mengubahnya menjadi _Component_, maka pemanggilan fungsi `js…Greet()` ini dapat kita tuliskan sebagai ekspresi JSX berikut ini:
+
+<iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/4-1-functional-components/?autoresize=1&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+Nah, kalau sudah begini, fungsi `js…Greet()` kita sudah terlihat seperti HTML yang "menyusup" di tengah-tengah kode JavaScript kan? 😁 Selamat! Anda telah berhasil membuat komponen React pertama Anda! 🤝

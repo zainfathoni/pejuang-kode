@@ -65,6 +65,11 @@ export const Article = styled.article`
       }
     }
   }
+
+  & :not(pre) > code[class*="language-"] {
+    padding: .1em .3em;
+    border-radius: .2em;
+    background-color: rgba(45, 45, 45, .9)
 `
 
 export const Footer = styled.footer`
