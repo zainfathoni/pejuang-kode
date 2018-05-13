@@ -142,3 +142,48 @@ Namun demikian, di balik "keanehan-keanehan" JSX di atas, terdapat sebuah "kekua
   Email {isInvalid(email) && 'is invalid!'}
 </label>
 ```
+
+## 4. Components
+
+Di React, cara kita membagi elemen-elemen dari suatu tampilan adalah dengan memilahnya menjadi _Components_ yang terpisah. Untuk lebih jelasnya, mari kita lihat kembali _project_ terakhir kita di atas.
+
+```jsx{2,6}
+function greet(name) {
+  return <h1>Hello, {name || 'Kisanak'}!</h1>
+}
+
+ReactDOM.render(
+  greet('Pejuang'),
+  document.getElementById('root')
+)
+```
+
+Di sini, fungsi `js…greet(name)` itu menghasilkan _element_ HTML `h1`. Kita bisa saja membuat berbagai fungsi yang pada akhirnya menghasilkan sekumpulan _element_ HTML seperti fungsi di atas. Tetapi React memiliki standard tersendiri untuk memudahkan kita dalam menyusun fungsi-fungsi tersebut, yaitu dengan menjadikannya sebagai _Components_. Kita akan mulai berkenalan dengan bentuk komponen yang paling sederhana di React, yaitu **_Functional Components_**.
+
+### 4.1 _Functional Components_
+
+Sesuai dengan namanya, _Functional Components_ ini sebenarnya hanyalah fungsi JavaScript biasa. Yang menjadikannya layak untuk disebut sebagai sebuah _Component_ hanyalah 2 syarat berikut ini:
+
+1.  Hanya menerima **sebuah** parameter dengan tipe `object`
+2.  Menghasilkan _element_ HTML atau _component_ React
+
+Fungsi `js…greet(name)` kita sudah memenuhi syarat ke-2, yaitu menghasilkan _element_ HTML `h1`. Fungsi ini juga sudah memenuhi sebagian dari syarat pertama, yaitu hanya menerima **sebuah** parameter, tetapi tipenya masih `string`. Ini berarti kita bisa membuatnya menjadi _component_ cukup dengan mengubah parameternya menjadi bertipe `object`.
+
+```jsx{1-2}
+function Greet(props) {
+  return <h1>Hello, {props.name || 'Kisanak'}!</h1>
+}
+```
+
+Catatan: Kita juga mengubah nama fungsinya menjadi diawali dengan huruf kapital, ini bukan syarat wajib, tetapi sudah menjadi konvensi untuk membedakan _component_ React dengan _element_ HTML biasa.
+
+Dengan demikian, maka fungsi ini sudah layak untuk disebut sebagai sebuah _Functional Component_! Mudah bukan? 😏
+Lantas, apa keistimewaan dari _Functional Component_ ini? 🤔
+
+> Setiap _Component_ di React dapat disusun satu sama lain dengan menggunakan JSX, sebagaimana _Element_ HTML.
+
+Setelah mengubahnya menjadi _Component_, maka pemanggilan fungsi `js…Greet()` ini dapat kita tuliskan sebagai ekspresi JSX berikut ini:
+
+<iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/4-1-functional-components/?autoresize=1&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+Nah, kalau sudah begini, fungsi `js…Greet()` kita sudah terlihat seperti HTML yang "menyusup" di tengah-tengah kode JavaScript kan? 😁 Selamat! Anda telah berhasil membuat komponen React pertama Anda! 🤝
