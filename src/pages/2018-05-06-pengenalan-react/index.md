@@ -93,6 +93,12 @@ ReactDOM.render(
 )
 ```
 
-Sebagai contoh, lihat bagaimana cara saya membuat kalimat `Hello, world!` sebelumnya menjadi bergantung pada nilai variabel lain.
+Sebagai contoh, amati bagaimana cara saya membuat kalimat `Hello, world!` sebelumnya menjadi bergantung pada nilai variabel lain. Coba ubah nilai dari variabel `firstName` dan `lastName` di sini, dan amati hasilnya!
 
 <iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/3-1-expression-di-jsx/?autoresize=1&fontsize=12&view=split" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+### 3.2 JSX adalah _Expression_
+
+Selain bisa mengandung _Expression_, ternyata JSX itu sendiri merupakan _Expression_. Dengan demikian, kita bisa memperlakukannya sebagaimana JavaScript _Expression_ pada umumnya. Misalnya, menjadikannya sebagai nilai kembalian dari sebuah fungsi. Kita coba ganti JSX di atas dengan pemanggilan sebuah fungsi `js…greet(name)`. Coba kosongkan parameter di pemanggilan fungsi `js…greet()` dan amati hasilnya!
+
+<iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/3-2-jsx-adalah-expression/?autoresize=1&fontsize=12&view=split" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
