@@ -105,7 +105,7 @@ Dengan demikian, kita bisa memperlakukannya sebagaimana _Expression_ JavaScript 
 
 <iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/3-2-jsx-adalah-expression/?autoresize=1&fontsize=12&view=split" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-### 3.3 _Attributes_ & _Children_ in JSX
+### 3.3 _Attributes_ & _Children_ di JSX
 
 Sebagaimana HTML biasa, JSX juga bisa menerima _attributes_ & _children_. Hanya saja, akibat keterbatasan JavaScript, ada sedikit perbedaan antara _attributes_ di JSX dan _attributes_ di HTML, antara lain sebagai berikut:
 
@@ -136,8 +136,8 @@ Kita harus menuliskan JSX seperti ini:
 Namun demikian, di balik "keanehan-keanehan" JSX di atas, terdapat sebuah "kekuatan besar" yang dimiliki JSX 😎, yaitu memasukkan _Expression_ JavaScript ke dalam nilai _attributes_, sebagaimana yang kita lakukan kepada _children_ di [poin sebelumnya](#31-menggunakan-expression-di-jsx). Berikut contohnya:
 
 ```jsx
-<label htmlFor={id} className="clearfix">
-  <input id={id} tabIndex="1" />
+<label htmlFor={id} className={classNames}>
+  <input id={id} tabIndex={x + 1} />
   <br />
   Email {isInvalid(email) && 'is invalid!'}
 </label>
@@ -187,3 +187,37 @@ Setelah mengubahnya menjadi _Component_, maka pemanggilan fungsi `js…Greet()` 
 <iframe src="https://codesandbox.io/embed/github/zainfathoni/react/tree/pengenalan-react/4-1-functional-components/?autoresize=1&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 Nah, kalau sudah begini, fungsi `js…Greet()` kita sudah terlihat seperti HTML yang "menyusup" di tengah-tengah kode JavaScript kan? 😁 Selamat! Anda telah berhasil membuat komponen React pertama Anda! 🤝
+
+### 4.2 _Object_ Props
+
+Apabila Anda amati, saya menamai satu-satunya parameter di fungsi `js…Greet()` tersebut dengan nama `props`, itu saya lakukan bukan tanpa alasan. Oleh React, istilah `props` ini memang dijadikan nama standard bagi _object_ JavaScript yang berisi **_properties_** suatu komponen React.
+
+Setiap kali React menemukan suatu ekspresi komponen dalam JSX, ia akan menggabungkan seluruh _attributes_ JSX tersebut ke dalam komponen itu sebagai sebuah _object_. Jadi, ekspresi `jsx…<Greet name='Pejuang' />` di atas itu sebenarnya diterjemahkan oleh React menjadi seperti ini:
+
+```js{3}
+React.createElement(
+  Greet,
+  { name: 'Pejuang' }
+)
+```
+
+Kalau tidak percaya, silakan coba salin kode di atas dan tempelkan ke CodeSandbox sebelumnya. Hasil tampilannya pasti akan sama persis. 😉
+
+### 4.3 Props tidak boleh diubah
+
+Dalam React, **props** adalah sarana utama kita memberikan _input_ kepada suatu komponen. React mengharuskan setiap komponen menghasilkan tampilan yang sama persis setiap kali diberikan _input_ yang sama persis. Untuk itu, React menetapkan aturan khusus untuk **props** ini, yaitu:
+
+> **Semua komponen React harus bertindak seperti [_pure functions_](https://en.wikipedia.org/wiki/Pure_function) terhadap props-nya.**
+
+Di sini kita mengenal istilah baru, yaitu _pure functions_. Apa itu _pure functions_? _Pure functions_ adalah fungsi yang murni. ... 🦗... 🦗... 🦗... ✌🏼😁 hehehe...
+
+Kembali ke laptop. Suatu fungsi bisa dikatakan _pure function_ apabila memenuhi dua syarat berikut ini:
+
+1.  Selalu mengembalikan hasil yang sama persis setiap kali diberikan masukan yang sama persis.
+2.  Setiap pemanggilannya tidak mengakibatkan "efek samping" kepada bagian program lainnya.
+
+Pembahasan lebih lanjut mengenai _pure functions_ akan saya jelaskan di tulisan lain ke depannya.
+
+Kalau kita sama sekali tidak boleh mengubah props, lantas bagaimana jika kita memerlukan suatu nilai yang bisa diubah untuk menentukan tampilannya? Misalnya, kita ingin komponen `jsx…<Greet />` kita dapat menerima beberapa nama sekaligus dan menampilkannya secara bergantian.
+
+### 4.4 _Class Components_ dan _State_
