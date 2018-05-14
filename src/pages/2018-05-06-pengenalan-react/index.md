@@ -257,3 +257,45 @@ Ada tiga perubahan signifikan di sini, yaitu:
 3.  `js…props` tidak lagi diperoleh melalui parameter fungsi, tetapi melalui objek `js…this` dari `js…class` tersebut.
 
 Selain dari ketiga hal di atas, kode lainnya masih sama persis. Lagi-lagi, kalau Anda masih tidak percaya juga, silakan coba lagi salin kode di atas dan tempelkan ke CodeSandbox sebelumnya. Hasil tampilannya juga pasti masih sama persis. 😅
+
+### 4.5 State
+
+Dengan mendefinisikan komponen `jsx…<Greet />` sebagai `js…class`, kita mendapatkan beberapa fitur tambahan dari React yang sebelumnya tidak bisa kita peroleh dengan _Functional Component_. Salah satunya adalah adanya objek baru bernama `state` yang dapat kita gunakan untuk mewakili kondisi internal dari suatu komponen.
+
+Dalam hal ini, kita ingin coba menggunakannya untuk menyimpan nama yang sedang ditampilkan oleh komponen komponen `jsx…<Greet />`. Pertama-tama, kita ubah dulu komponen `jsx…<Greet />` untuk menerima props `names` berupa `js…array`, dan hanya menampilkan nama pertama di `js…array` tersebut.
+
+```jsx{5,12}
+class Greet extends React.Component {
+  render() {
+    return (
+      <h1>
+        Hello, {this.props.names[0] || 'Kisanak'}!
+      </h1>
+    )
+  }
+}
+
+ReactDOM.render(
+  <Greet names={['Pejuang', 'Kode', 'Indonesia']} />,
+  document.getElementById('root')
+)
+```
+
+Kemudian kita tambahkan _class constructor_ yang menginisialisasi objek `js…this.state` dengan sebuah _property_ bernama `id`.
+
+```jsx{2-5}
+class Greet extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { id: 0 }
+  }
+
+  render() {
+    return (
+      <h1>
+        Hello, {this.props.names[0] || 'Kisanak'}!
+      </h1>
+    )
+  }
+}
+```
