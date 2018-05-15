@@ -44,7 +44,7 @@ export const Section = styled.section``
 export const Article = styled.article`
   .gatsby-highlight {
     background-color: #2d2d2d;
-    ${media.tablet`border-radius: .75rem;`} margin: 0 -1rem 1.45rem -1rem;
+    ${media.tablet`border-radius: .75rem;`} margin: 0 -1rem 1.45rem;
     padding: 1rem;
     overflow: auto;
 
@@ -69,6 +69,13 @@ export const Article = styled.article`
     padding: 0.1em 0.3em;
     border-radius: 0.2em;
     background-color: rgba(45, 45, 45, 0.9);
+  }
+
+  blockquote {
+    background-color: rgba(255, 229, 100, 0.3);
+    border-left: 0.5rem solid #ffe564;
+    padding: 1.25rem;
+    margin: 0 -1rem 1rem -1rem;
   }
 `
 
