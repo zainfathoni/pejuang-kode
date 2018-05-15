@@ -36,6 +36,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next } = this.props.pathContext
     const date = new Date(post.frontmatter.date)
+    const today = new Date()
 
     return (
       <Article>
@@ -49,7 +50,10 @@ class BlogPostTemplate extends React.Component {
             {date.toLocaleDateString('id-ID', {
               day: 'numeric',
               month: 'short',
-              year: 'numeric',
+              year:
+                today.getFullYear() === date.getFullYear()
+                  ? undefined
+                  : 'numeric',
             })}
           </time>
           &nbsp;<strong>&middot;</strong>&nbsp;
