@@ -5,11 +5,13 @@ import Helmet from 'react-helmet'
 
 import { Zain, Galih } from '../components/Bio'
 import { Article } from '../components/Layout'
+import TimeLabel from '../components/TimeLabel'
 
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const today = new Date()
 
     return (
       <React.Fragment>
@@ -17,6 +19,11 @@ class BlogIndex extends React.Component {
         <h2>Artikel</h2>
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
+          const timeLabelProps = {
+            today,
+            date: new Date(node.frontmatter.date),
+            timeToRead: node.timeToRead,
+          }
           return (
             <Article key={node.fields.slug}>
               <h3>
@@ -24,7 +31,7 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <TimeLabel {...timeLabelProps} />
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </Article>
           )
@@ -54,8 +61,9 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          timeToRead
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date
             title
           }
         }

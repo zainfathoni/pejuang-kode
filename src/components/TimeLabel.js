@@ -11,10 +11,10 @@ const StyledDiv = styled.div`
   font-size: 0.8em;
 `
 
-const TimeLabel = ({ today, date, timeToRead }) => (
+const TimeLabel = ({ today, date, timeToRead, withIcon }) => (
   <StyledDiv>
     <time>
-      <Icon icon={faCalendarAlt} />&nbsp;
+      {withIcon && [<Icon icon={faCalendarAlt} />, ' ']}
       {date.toLocaleDateString('id-ID', {
         day: 'numeric',
         month: 'short',
@@ -24,7 +24,8 @@ const TimeLabel = ({ today, date, timeToRead }) => (
     </time>
     &nbsp;<strong>&middot;</strong>&nbsp;
     <span>
-      <Icon icon={faClock} /> {timeToRead} menit
+      {withIcon && [<Icon icon={faClock} />, ' ']}
+      {timeToRead} menit
     </span>
   </StyledDiv>
 )

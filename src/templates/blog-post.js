@@ -48,7 +48,7 @@ class BlogPostTemplate extends React.Component {
           <title>{`${post.frontmatter.title} | ${siteTitle}`}</title>
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
-        <TimeLabel {...timeLabelProps} />
+        <TimeLabel {...timeLabelProps} withIcon />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
         <h4>Kontributor</h4>
