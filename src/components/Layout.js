@@ -8,7 +8,7 @@ const gradient = `linear-gradient(
   rgb(10, 180, 77) 10%,
   rgb(9, 179, 175) 70%,
   rgb(9, 179, 175) 94%
-)`
+);`
 
 export const Main = styled.main`
   flex: 1;
@@ -44,8 +44,7 @@ export const Section = styled.section``
 export const Article = styled.article`
   .gatsby-highlight {
     background-color: #2d2d2d;
-    ${media.tablet`border-radius: .75rem;`};
-    margin: 0 -1rem 1.45rem -1rem;
+    ${media.tablet`border-radius: .75rem;`} margin: 0 -1rem 1.45rem -1rem;
     padding: 1rem;
     overflow: auto;
 
@@ -66,10 +65,11 @@ export const Article = styled.article`
     }
   }
 
-  & :not(pre) > code[class*="language-"] {
-    padding: .1em .3em;
-    border-radius: .2em;
-    background-color: rgba(45, 45, 45, .9)
+  & :not(pre) > code[class*='language-'] {
+    padding: 0.1em 0.3em;
+    border-radius: 0.2em;
+    background-color: rgba(45, 45, 45, 0.9);
+  }
 `
 
 export const Footer = styled.footer`

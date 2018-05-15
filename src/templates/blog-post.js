@@ -9,6 +9,7 @@ import Icon from '../components/Icon'
 
 import { Zain, Galih } from '../components/Bio'
 import { Article } from '../components/Layout'
+import TimeLabel from '../components/TimeLabel'
 
 const TimeSection = styled.div`
   margin-bottom: 16px;
@@ -35,8 +36,11 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next } = this.props.pathContext
-    const date = new Date(post.frontmatter.date)
-    const today = new Date()
+    const timeLabelProps = {
+      today: new Date(),
+      date: new Date(post.frontmatter.date),
+      timeToRead: post.timeToRead,
+    }
 
     return (
       <Article>
@@ -44,23 +48,7 @@ class BlogPostTemplate extends React.Component {
           <title>{`${post.frontmatter.title} | ${siteTitle}`}</title>
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
-        <TimeSection>
-          <time>
-            <Icon icon={faCalendarAlt} />&nbsp;
-            {date.toLocaleDateString('id-ID', {
-              day: 'numeric',
-              month: 'short',
-              year:
-                today.getFullYear() === date.getFullYear()
-                  ? undefined
-                  : 'numeric',
-            })}
-          </time>
-          &nbsp;<strong>&middot;</strong>&nbsp;
-          <span>
-            <Icon icon={faClock} /> {post.timeToRead} menit
-          </span>
-        </TimeSection>
+        <TimeLabel {...timeLabelProps} />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
         <h4>Kontributor</h4>
