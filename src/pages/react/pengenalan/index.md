@@ -206,7 +206,7 @@ Kalau tidak percaya, silakan coba salin kode di atas dan tempelkan ke CodeSandbo
 
 Dalam React, **props** adalah sarana utama kita memberikan _input_ kepada suatu komponen. React mengharuskan setiap komponen menghasilkan tampilan yang sama persis setiap kali diberikan _input_ yang sama persis. Untuk itu, React menetapkan aturan khusus untuk **props** ini, yaitu:
 
-> **Semua komponen React harus bertindak seperti [_pure functions_](https://en.wikipedia.org/wiki/Pure_function) terhadap props-nya.**
+> Semua komponen React harus bertindak seperti [_pure functions_](https://en.wikipedia.org/wiki/Pure_function) terhadap props-nya.
 
 Di sini kita mengenal istilah baru, yaitu _pure functions_. Apa itu _pure functions_? _Pure functions_ adalah fungsi yang murni. ... 🦗... 🦗... 🦗... ✌🏼😁 hehehe...
 
