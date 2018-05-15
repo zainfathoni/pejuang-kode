@@ -109,9 +109,9 @@ Dengan demikian, kita bisa memperlakukannya sebagaimana _Expression_ JavaScript 
 
 Sebagaimana HTML biasa, JSX juga bisa menerima _attributes_ & _children_. Hanya saja, akibat keterbatasan JavaScript, ada sedikit perbedaan antara _attributes_ di JSX dan _attributes_ di HTML, antara lain sebagai berikut:
 
-1.  Apabila di HTML, nama _attributes_ berbentuk `kebab-case` seperti ini, di JSX nama _attributes_ berbentuk `camelCase` seperti ini.
+1.  Di HTML, nama _attributes_ berbentuk `kebab-case` seperti ini, sedangkan di JSX nama _attributes_ berbentuk `camelCase` seperti ini.
 2.  Beberapa _attributes_ HTML seperti [class](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) & [for](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) harus diganti dengan `className` & `htmlFor` di JSX, karena `class` & `for` sudah terlanjur dijadikan sebagai [_Reserved Keywords_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords) di JavaScript.
-3.  Apabila di HTML ada beberapa _tag_ tertentu yang tidak memerlukan (bahkan tidak membolehkan) _closing tag_–seperti [<br>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br) misalnya–, di JSX semua _tag_ harus ditutup, termasuk `<br />` sekalipun
+3.  Di HTML ada beberapa _tag_ tertentu yang tidak memerlukan (bahkan tidak membolehkan) _closing tag_, seperti [\<br>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br) misalnya, sedangkan di JSX semua _tag_ harus ditutup, termasuk `<br />` sekalipun.
 
 Sebagai contoh, untuk menghasilkan _tag_ HTML yang seperti ini:
 
@@ -162,20 +162,19 @@ Di sini, fungsi `js…greet(name)` itu menghasilkan _element_ HTML `h1`. Kita bi
 
 ### 4.1 _Functional Components_
 
-Sesuai dengan namanya, _Functional Components_ ini sebenarnya hanyalah fungsi JavaScript biasa. Yang menjadikannya layak untuk disebut sebagai sebuah _Component_ hanyalah 2 syarat berikut ini:
+Sesuai dengan namanya, _Functional Components_ ini sebenarnya hanyalah fungsi JavaScript biasa. Yang menjadikannya layak untuk disebut sebagai sebuah _Component_ hanyalah 3 syarat berikut ini:
 
 1.  Hanya menerima **sebuah** parameter dengan tipe `object`
 2.  Menghasilkan _element_ HTML atau _component_ React
+3.  Nama fungsi diawali dengan huruf kapital, untuk membedakan _component_ React dengan _element_ HTML biasa
 
-Fungsi `js…greet(name)` kita sudah memenuhi syarat ke-2, yaitu menghasilkan _element_ HTML `h1`. Fungsi ini juga sudah memenuhi sebagian dari syarat pertama, yaitu hanya menerima **sebuah** parameter, tetapi tipenya masih `string`. Ini berarti kita bisa membuatnya menjadi _component_ cukup dengan mengubah parameternya menjadi bertipe `object`.
+Fungsi `js…greet(name)` kita sudah memenuhi syarat ke-2, yaitu menghasilkan _element_ HTML `h1`. Fungsi ini juga sudah memenuhi sebagian dari syarat pertama, yaitu hanya menerima **sebuah** parameter, tetapi tipenya masih `string`. Ini berarti kita bisa membuatnya menjadi _component_ cukup dengan mengubah parameternya menjadi bertipe `object`. Selain itu, kita juga harus mengubah nama fungsinya menjadi diawali dengan huruf kapital supaya bisa memenuhi syarat yang ketiga.
 
 ```jsx{1-2}
 function Greet(props) {
   return <h1>Hello, {props.name || 'Kisanak'}!</h1>
 }
 ```
-
-Catatan: Kita juga mengubah nama fungsinya menjadi diawali dengan huruf kapital, ini bukan syarat wajib, tetapi sudah menjadi konvensi untuk membedakan _component_ React dengan _element_ HTML biasa.
 
 Dengan demikian, maka fungsi ini sudah layak untuk disebut sebagai sebuah _Functional Component_! Mudah bukan? 😏
 Lantas, apa keistimewaan dari _Functional Component_ ini? 🤔
@@ -262,7 +261,7 @@ Selain dari ketiga hal di atas, kode lainnya masih sama persis. Lagi-lagi, kalau
 
 Dengan mendefinisikan komponen `jsx…<Greet />` sebagai `js…class`, kita mendapatkan beberapa fitur tambahan dari React yang sebelumnya tidak bisa kita peroleh dengan _Functional Component_. Salah satunya adalah adanya objek baru bernama `state` yang dapat kita gunakan untuk mewakili kondisi internal dari suatu komponen.
 
-Dalam hal ini, kita ingin coba menggunakannya untuk menyimpan nama yang sedang ditampilkan oleh komponen komponen `jsx…<Greet />`. Pertama-tama, kita ubah dulu komponen `jsx…<Greet />` untuk menerima props `names` berupa `js…array`, dan hanya menampilkan nama pertama di `js…array` tersebut.
+Mari kita coba berlatih menggunakannya untuk menyimpan nama yang sedang ditampilkan oleh komponen `jsx…<Greet />`. Pertama-tama, kita ubah dulu komponen `jsx…<Greet />` untuk menerima props `names` berupa `js…array`, dan hanya menampilkan nama pertama di `js…array` tersebut.
 
 ```jsx{5,12}
 class Greet extends React.Component {
