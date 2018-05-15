@@ -26,7 +26,7 @@ Cara termudah untuk mulai menggunakan React adalah menggunakan [CodePen](https:/
 
 Project di atas bisa Anda _edit_ secara langsung sebagai sarana untuk bereksperimen. Tetapi apabila Anda ingin menjalankannya di komputer Anda secara lokal, tinggal _download_ saja project tersebut, pastikan [NodeJS](https://nodejs.org/en/) sudah terinstall dengan menjalankan perintah `bash…node -v`, lalu jalankan perintah `bash…npm install && npm start` untuk menyalakan aplikasi.
 
-Di project tersebut terdapat tiga buah file, yaitu file JavaScript `index.js`, HTML `index.html`, dan JSON `package.json`. Mari kita amati lebih jauh.
+Di project tersebut terdapat tiga buah file, yaitu file JavaScript `index.js`, HTML `index.html`, dan JSON `package.json`. Kita akan bedah satu persatu file tersebut.
 
 ## 1. ReactDOM
 
