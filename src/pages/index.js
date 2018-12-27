@@ -53,7 +53,6 @@ class BlogIndex extends React.Component {
         <hr />
         <h4>Kontributor</h4>
         <Zain />
-        <Galih />
       </React.Fragment>
     )
   }
