@@ -135,3 +135,7 @@ Namun demikian, di balik "keanehan-keanehan" JSX di atas, terdapat sebuah "kekua
   Email {isInvalid(email) && 'is invalid!'}
 </label>
 ```
+
+## Penutup
+
+Demikian pengantar React kali ini, silakan bereksperimen dengan kode-kode di atas untuk memperkuat pemahamannya. Sampai jumpa di tulisan berikutnya 😉.
