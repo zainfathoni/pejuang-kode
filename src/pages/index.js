@@ -4,7 +4,7 @@ import get from 'lodash/get'
 import filter from 'lodash/filter'
 import Helmet from 'react-helmet'
 
-import { Zain, Galih } from '../components/Bio'
+import { Zain } from '../components/Bio'
 import { Article } from '../components/Layout'
 import TimeLabel from '../components/TimeLabel'
 
@@ -51,7 +51,7 @@ class BlogIndex extends React.Component {
         {/* <h2>JavaScript</h2> */}
         {this.renderPosts(jsPosts)}
         <hr />
-        <h4>Kontributor</h4>
+        <h4>Penulis</h4>
         <Zain />
       </React.Fragment>
     )

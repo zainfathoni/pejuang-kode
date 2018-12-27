@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 
-import { Zain, Galih } from '../components/Bio'
+import { Zain } from '../components/Bio'
 import { Article } from '../components/Layout'
 import TimeLabel from '../components/TimeLabel'
 
@@ -25,7 +25,6 @@ const Prev = Next.extend`
 
 const authorBio = {
   zain: <Zain />,
-  galih: <Galih />,
 }
 
 class BlogPostTemplate extends React.Component {
@@ -48,7 +47,7 @@ class BlogPostTemplate extends React.Component {
         <TimeLabel {...timeLabelProps} withIcon />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
-        <h4>Kontributor</h4>
+        <h4>Penulis</h4>
         {authorBio[post.frontmatter.author]}
 
         <ContextNav>

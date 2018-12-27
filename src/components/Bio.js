@@ -30,22 +30,31 @@ export default Bio
 
 export const Zain = () => (
   <Bio email="zain.fathoni@gmail.com">
-    <strong>Zain Fathoni</strong> adalah seorang Senior Software Engineer di{' '}
-    <a href="https://www.ninjavan.co">Ninja Van</a> Singapura. Kini ia sangat
-    tertarik dengan JavaScript dan React beserta ekosistemnya.<br />
-    Anda dapat menghubunginya melalui{' '}
-    <a href="https://m.me/zain.fathoni.page">Facebook Messenger</a>.
-  </Bio>
-)
-
-export const Galih = () => (
-  <Bio email="hi@galihpratama.net">
-    <strong>Galih Pratama</strong> adalah pemilik dari{' '}
-    <a href = "https://belajarkoding.net"> BelajarKoding </a> dan 
-    Head Front-end di <a href="https://crowde.co">CROWDE</a>.
-    Sudah membuat lebih dari 30+ aplikasi dan 100+ video tutorial.
+    <strong>Zain Fathoni</strong> adalah seorang{' '}
+    <a href="https://www.linkedin.com/in/zainfathoni/" target="_blank">
+      Senior Software Engineer
+    </a>{' '}
+    di{' '}
+    <a href="https://www.ninjavan.co" target="_blank">
+      Ninja Van
+    </a>{' '}
+    Singapura. Kini ia sangat tertarik dengan JavaScript dan React beserta
+    ekosistemnya.
     <br />
     Anda dapat menghubunginya melalui{' '}
-    <a href="mailto:hi@galihpratama.net">Email</a>.
+    <a href="https://m.me/zain.fathoni.page" target="_blank">
+      Facebook Messenger
+    </a>{' '}
+    atau{' '}
+    <a href="https://t.me/zainfathoni" target="_blank">
+      Telegram
+    </a>
+    .<br />
+    <br />
+    Silakan <em>subscribe</em> ke{' '}
+    <a href="https://t.me/pejuangkode" target="_blank">
+      Channel Telegram Pejuang Kode
+    </a>{' '}
+    untuk menyimak tulisan-tulisan berikutnya di blog ini.
   </Bio>
 )
