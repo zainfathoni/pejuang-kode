@@ -13,8 +13,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         `
           {
             allMarkdownRemark(
+              filter: { frontmatter: { draft: { ne: true } } }
               sort: { fields: [frontmatter___date], order: DESC }
-              limit: 1000
+              limit: 100
             ) {
               edges {
                 node {
