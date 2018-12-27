@@ -48,7 +48,7 @@ class BlogIndex extends React.Component {
         <Helmet title={siteTitle} />
         <h2>React</h2>
         {this.renderPosts(reactPosts)}
-        <h2>JavaScript</h2>
+        {/* <h2>JavaScript</h2> */}
         {this.renderPosts(jsPosts)}
         <hr />
         <h4>Kontributor</h4>
