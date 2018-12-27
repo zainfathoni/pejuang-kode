@@ -28,6 +28,23 @@ const authorBio = {
 }
 
 class BlogPostTemplate extends React.Component {
+  componentDidMount() {
+    const { slug } = this.props.pathContext
+    console.log('https://www.pejuangkode.com' + slug)
+    var disqus_config = function() {
+      this.page.url = 'https://www.pejuangkode.com' + slug
+      this.page.identifier = slug
+    }
+
+    ;(function() {
+      var d = document,
+        s = d.createElement('script')
+      s.src = 'https://pejuangkode.disqus.com/embed.js'
+      s.setAttribute('data-timestamp', +new Date())
+      ;(d.head || d.body).appendChild(s)
+    })()
+  }
+
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
@@ -67,6 +84,7 @@ class BlogPostTemplate extends React.Component {
             </Next>
           )}
         </ContextNav>
+        <div id="disqus_thread" />
       </Article>
     )
   }
