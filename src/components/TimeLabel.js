@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import faCalendarAlt from '@fortawesome/fontawesome-pro-light/faCalendarAlt'
-import faClock from '@fortawesome/fontawesome-pro-light/faClock'
+import { faCalendarAlt, faClock } from '@fortawesome/pro-light-svg-icons'
 
 import Icon from '../components/Icon'
 
@@ -14,7 +13,11 @@ const StyledDiv = styled.div`
 const TimeLabel = ({ today, date, timeToRead, withIcon }) => (
   <StyledDiv>
     <time>
-      {withIcon && [<Icon icon={faCalendarAlt} />, ' ']}
+      {withIcon && (
+        <Fragment>
+          <Icon icon={faCalendarAlt} />{' '}
+        </Fragment>
+      )}
       {date.toLocaleDateString('id-ID', {
         day: 'numeric',
         month: 'short',
@@ -24,7 +27,11 @@ const TimeLabel = ({ today, date, timeToRead, withIcon }) => (
     </time>
     &nbsp;<strong>&middot;</strong>&nbsp;
     <span>
-      {withIcon && [<Icon icon={faClock} />, ' ']}
+      {withIcon && (
+        <Fragment>
+          <Icon icon={faClock} />{' '}
+        </Fragment>
+      )}
       {timeToRead} menit
     </span>
   </StyledDiv>
