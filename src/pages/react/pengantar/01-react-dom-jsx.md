@@ -138,4 +138,4 @@ Namun demikian, di balik "keanehan-keanehan" JSX di atas, terdapat sebuah "kekua
 
 ## Penutup
 
-Demikian pengantar React kali ini, silakan bereksperimen dengan kode-kode di atas untuk memperkuat pemahamannya. Sampai jumpa di tulisan berikutnya 😉.
+Demikian sekilas pengantar React dari saya kali ini, silakan bereksperimen dengan kode-kode di atas untuk memperkuat pemahamannya. Selanjutnya saya akan menjelaskan tentang berbagai macam _Components_ di React. Sampai jumpa di tulisan berikutnya 😉.
