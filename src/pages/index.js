@@ -48,12 +48,11 @@ class BlogIndex extends React.Component {
         <Helmet title={siteTitle} />
         <h2>React</h2>
         {this.renderPosts(reactPosts)}
-        <h2>JavaScript</h2>
+        {/* <h2>JavaScript</h2> */}
         {this.renderPosts(jsPosts)}
         <hr />
         <h4>Kontributor</h4>
         <Zain />
-        <Galih />
       </React.Fragment>
     )
   }
@@ -68,7 +67,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { draft: { ne: true } } }
+      sort: { fields: [frontmatter___date], order: ASC }
+      limit: 10
+    ) {
       edges {
         node {
           excerpt

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import faCode from '@fortawesome/fontawesome-pro-regular/faCode'
+import { faCode } from '@fortawesome/pro-regular-svg-icons'
 import 'prismjs/themes/prism-tomorrow.css'
 
 import Layout, { Header, Main, Footer } from '../components/Layout'
