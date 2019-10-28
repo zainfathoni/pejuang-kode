@@ -30,7 +30,10 @@ export default Bio
 
 export const Zain = () => (
   <Bio email="zain.fathoni@gmail.com">
-    <strong>Zain Fathoni</strong> adalah seorang{' '}
+    <a href="https://www.zainfathoni.com" target="_blank">
+      <strong>Zain Fathoni</strong>
+    </a>{' '}
+    adalah seorang{' '}
     <a href="https://www.linkedin.com/in/zainfathoni/" target="_blank">
       Senior Software Engineer
     </a>{' '}
