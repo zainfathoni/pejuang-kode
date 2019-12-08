@@ -37,7 +37,7 @@
     "gatsby-source-filesystem": "^1.4.3",
     "gatsby-transformer-remark": "^1.7.1",
     "gatsby-transformer-sharp": "^1.6.1",
-    "lodash": "^4.15.0",
+    "lodash": "^4.17.13",
     "prismjs": "^1.17.1",
     "react-gravatar": "^2.6.3",
     "styled-components": "^3.2.6"
